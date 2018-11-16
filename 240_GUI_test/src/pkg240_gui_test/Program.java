@@ -9,13 +9,16 @@ package pkg240_gui_test;
  *
  * @author Rachel
  */
-public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Program {
+    
+    public static void main(String[] args){
+        ProjectGUI frame = new ProjectGUI();
+        frame.setVisible(true);        
+        
+        //NOTE: shift+f6 to run
+        
     }
+    
+    
     
 }
