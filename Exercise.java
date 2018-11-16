@@ -1,4 +1,3 @@
-import com.sun.tools.internal.ws.wsdl.document.jaxws.Exception;
 
 public class Exercise{
 
@@ -10,26 +9,38 @@ public class Exercise{
     int type;           // 0 means lower body excercise. 1 means core excercise. 2 means upper body excercise.
 
     // default constructor
-    public Excercise(){
-
+    public Exercise(){
+        name = "";
+        description = "";
+        difficulty = 0;
+        type = 0;
     }
 
     // primary constructor
-    public Excercise(String name, String description, int difficulty, int type){
+    public Exercise(String name, String description, int difficulty, int type){
         this.name = name;
         this.description = description;
         this.difficulty = difficulty;
         try{
-            if(type < 3 && type > -1){
+            if(type <= 3 && type > 0){
                 this.type = type;
             }
-            else{
-                throw new Exception();
-            }
         }
+        finally {
+                //throw new Exception();
+        }
+
+    }
+
+    public int getType(){
+        return type; 
+    }
+
+    public int getDifficulty(){
+        return difficulty;
     }
 
     public String toString(){
-        return "maybe the description?";
+        return ("[Exercise: " + name + ", " + description + ", " + "Difficulty: " + difficulty + ", " + "Type: " + type + "]");
     }
 }
