@@ -1,7 +1,7 @@
 Name, description, difficulty, type
 “Bench Press”,“Lay on bench and have a medium shoulder-width grip and touch bar to chest and push back up.”,1,3
 “Incline Bench”,“Lay on bench and have a medium shoulder-width grip and touch bar to chest and push back up.”,1,3
-“Dumbbell Chest Flyes”,“Lay on a bench and hold one dumbbell straight above your chest, and keeping a slight bend in your arms, bring the dumbbells out to the side till your arms are inline with chest.”,2,3
+“Dumbbell Chest Flyes”,“Lay on a bench and hold one dumbbell straight above your chest and keeping a slight bend in your arms bring the dumbbells out to the side till your arms are inline with chest.”,2,3
 “Cable Fly”,"",2,3
 “Chest Dips”,"",1,3
 “Shoulder press”,"",2,3
