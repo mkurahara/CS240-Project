@@ -34,19 +34,21 @@ public class DifficultySeparator {
                 difficulty1.add(e);
             } else if ( e.getDifficulty() == 2){
                 difficulty2.add(e);
-            } else {
+            } else if ( e.getDifficulty() == 3) {
                 difficulty3.add(e);
             }
         }
     }
     
     public ArrayList<Exercise> getList(String listname){
+        ArrayList<Exercise> eList = null;
         if(listname == "difficulty1"){
-            return difficulty1;
+            eList = difficulty1;
         } else if(listname == "difficulty2"){
-            return difficulty2;
-        } else {
-            return difficulty3;
+            eList = difficulty2;
+        } else if(listname == "difficulty3"){
+            eList = difficulty3;
         }
+        return eList;
     }
 }

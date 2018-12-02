@@ -15,18 +15,18 @@ import java.util.HashMap;
 
 public class SetsAndReps{
 
-    private ArrayList<Exercise> routineList;
+    private Exercise ex;
     private HashMap<Integer,String> sr;
     private Random rand = new Random();
     public int sets;
     public int reps;
 
     public SetsAndReps(){
-        routineList = new ArrayList<>();
+        ex = new Exercise();
     }
 
-    public SetsAndReps(ArrayList<Exercise> input){
-        routineList = input;
+    public SetsAndReps(Exercise input){
+        ex = input;
         sr = new HashMap<>();
         sr.put(1,"5,5");
         sr.put(2,"3,8");
@@ -38,6 +38,7 @@ public class SetsAndReps{
         String[] strList = str.split(",");
         sets = Integer.parseInt(strList[0]);
         reps = Integer.parseInt(strList[1]);
+        ex.setSetsAndReps(sets, reps);
     }
 
     public int getSets(){

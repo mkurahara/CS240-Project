@@ -83,6 +83,11 @@ public class Exercise{
     public int getReps(){
         return reps;
     }
+    
+    public String getSetsAndReps(){
+        String str = sets + " sets " + reps + " reps";
+        return str;
+    }
 
     public void setSetsAndReps(int inputSets, int inputReps){
         reps = inputReps;

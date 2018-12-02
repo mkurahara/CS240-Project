@@ -14,7 +14,6 @@ import java.util.Random;
 
 public class Routine{
 
-    public ArrayList<Exercise> routineList;
     public int sets;
     public int reps;
     public int weight;
@@ -23,6 +22,7 @@ public class Routine{
     private Random rand = new Random();
     private ArrayList<String> srl = new ArrayList<>();
     public ArrayList<Integer> userMaxes;
+    private ArrayList<Exercise> routineList;
 
     public Routine(){
         routineList = new ArrayList<>();
@@ -33,17 +33,19 @@ public class Routine{
         reps = 0;
         sets = 0;
     }
-    public Routine(ArrayList<Exercise> input){
-        routineList = input;
-        setsAndReps = new SetsAndReps(routineList);
-        reps = setsAndReps.getReps();
-        sets = setsAndReps.getSets();
-        userMaxes = getUserMaxes(); //need to implement
+    public Routine(ArrayList<Exercise> routList){
+        routineList = routList;
+        userMaxes = new ArrayList<>();//getUserMaxes(); //need to implement
+        userMaxes.add(300);
+        userMaxes.add(0);
+        userMaxes.add(200);
         for(int i=0; i < routineList.size(); i++){
             Exercise exercise = routineList.get(i);
-            weight = getWeight(userWeight, exercise);
-            exercise.setWeight(weight);
-            exercise.setSetsAndReps(sets, reps);
+            weight = getWeight(exercise);
+            exercise.setWeight(weight);;
+            setsAndReps = new SetsAndReps(exercise);
+            reps = setsAndReps.getReps();
+            sets = setsAndReps.getSets();
         }
         
     }
@@ -57,7 +59,7 @@ public class Routine{
         return setsRepsStr;
     }
 
-    private int getWeight(int userWeight, Exercise exercise){
+    private int getWeight(Exercise exercise){
         RepWeight setWeight = new RepWeight(exercise, reps, userMaxes);
         weight = setWeight.getWeight();
         return weight;

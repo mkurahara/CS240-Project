@@ -46,34 +46,36 @@ public class RepWeight{
 
     public int getWeight(){
         String search = "dumbbell";
-        if(eType == 1){
-            if(reps < 10){
-                double tempWeight = (userMax * (.75));
-                weight = (int) (5*(Math.round(tempWeight/5)));
-            } else {
-                double tempWeight = (userMax * (.60));
-                weight = (int) (5*(Math.round(tempWeight/5)));
-            }
-        } else if(eType == 3){
-            if(eName.toLowerCase().indexOf(search.toLowerCase()) != -1){
-                if (reps < 10){
-                    double tempWeight = ((userMax * (.50))/2);
-                    weight = (int) (5*(Math.round(tempWeight/5)));
-                } else {
-                    double tempWeight = ((userMax * (.40))/2);
-                    weight = (int) (5*(Math.round(tempWeight/5)));
-                }
-            } else {
-                if (reps < 10){
-                    double tempWeight = (userMax * (.70));
+        switch (eType) {
+            case 1:
+                if(reps < 10){
+                    double tempWeight = (userMax * (.75));
                     weight = (int) (5*(Math.round(tempWeight/5)));
                 } else {
                     double tempWeight = (userMax * (.60));
                     weight = (int) (5*(Math.round(tempWeight/5)));
-                }
-            }
-        } else {
-            time = 60;
+                }   break;
+            case 3:
+                if(eName.toLowerCase().contains(search.toLowerCase())){
+                    if (reps < 10){
+                        double tempWeight = ((userMax * (.50))/2);
+                        weight = (int) (5*(Math.round(tempWeight/5)));
+                    } else {
+                        double tempWeight = ((userMax * (.40))/2);
+                        weight = (int) (5*(Math.round(tempWeight/5)));
+                    }
+                } else {
+                    if (reps < 10){
+                        double tempWeight = (userMax * (.70));
+                        weight = (int) (5*(Math.round(tempWeight/5)));
+                    } else {
+                        double tempWeight = (userMax * (.60));
+                        weight = (int) (5*(Math.round(tempWeight/5)));
+                    }
+                }   break;
+            default:
+                time = 60;
+                break;
         }
          
         return weight;
